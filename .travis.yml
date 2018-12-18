@@ -4,9 +4,9 @@ before_install:
 script:
 - mkdir -p pdf
 - find ./tex -type f -name "*.tex" -exec pdflatex -output-directory ./pdf  {} \;
-- rm *.aux
-- rm *.log
-- rm *.synctex.gx
+- rm *.aux || true
+- rm *.log || true
+- rm *.synctex.gx || true
 deploy:
   provider: pages
   skip-cleanup: true
