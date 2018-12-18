@@ -1,0 +1,16 @@
+before_install:
+- sudo apt-get update && sudo apt-get install --no-install-recommends texlive-fonts-recommended
+  texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng
+script:
+- mkdir -p pdf
+- find ./tex -type f -name "*.tex" -exec pdflatex -output-directory ./pdf  {} \;
+- rm *.aux || true
+- rm *.log || true
+- rm *.synctex.gx || true
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  on:
+branch: master

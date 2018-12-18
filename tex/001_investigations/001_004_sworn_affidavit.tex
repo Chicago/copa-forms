@@ -1,0 +1,170 @@
+\documentclass{article}
+
+
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{hyperref}
+
+\usepackage[]{amsmath}
+
+\usepackage{changepage}
+ \geometry{
+ letterpaper,
+ }
+
+
+\newcommand\tline[2]{$\underset{\text{#1}}{\text{\underline{\hspace{#2}}}}$}
+
+\newcolumntype{Z}{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}X}
+
+
+ \usepackage[absolute,overlay]{textpos}
+\geometry{top=0.75in,bottom=1.25in,right=0.5in,left=0.5in}
+
+\renewcommand{\familydefault}{\sfdefault} % set default font to sans serif
+
+\let\NotUnderlinedTextField\TextField
+\renewcommand{\TextField}[2][] {
+        \vbox{\hbox{\NotUnderlinedTextField[#1]{#2}}\kern2pt\hrule}
+}
+
+
+ \tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\pagenumbering{gobble} % remove page numbers
+
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0.0pt}% default is 0pt
+
+\renewcommand{\footrulewidth}{0.4pt}% default is 0pt
+\pagestyle{fancy}
+\lfoot{\textbf{COPA-01.004 (REV. 12/18)}}
+
+
+\setlength\headheight{60pt} %% just to make warning go away. Adjust the value after looking into the warning.
+% \rhead{{\color{blue}\rule{1cm}{1cm}}}
+
+\chead{\includegraphics[width=6cm]{copa-logo.png}}
+
+\begin{document}
+
+\begin{flushleft}
+
+\LARGE{\textbf{SWORN AFFIDAVIT}} \par
+
+\end{flushleft}
+
+\vspace{1em}
+
+
+\begin{flushleft}
+
+\begin{adjustwidth}{-2.25mm}{0cm}
+
+\begin{tabularx}{\linewidth}{ X  X  X  }
+
+    Location of Incident:  &  Date of Incident: & Time of Incident:  \\\\
+    \TextField[name=location_of_incident, height=1em, width=\linewidth]{} & \TextField[name=incident_date, height=1em, width=\linewidth]{}  &  \TextField[name=incident_time, height=1em, width=\linewidth]{}
+
+          %\multicolumn{3}{X}{ \fbox{\NotUnderlinedTextField[name=summary,multiline=true,width=2 \linewidth,height=10\baselineskip]{}}}}\\\\
+
+
+\end{tabularx}
+
+\end {adjustwidth}
+
+\end{flushleft}
+
+\bigskip
+
+
+\noindent
+I,\TextField[name='name_line', width=3in]{}, affirm that the statement I have given to the Civilian Office of Police Accountability, and any allegations that I have made, are true. \par
+\bigskip
+
+
+
+\begin{flushleft}
+\begin{adjustwidth}{-2.25mm}{0cm}
+
+\begin{tabularx}{\linewidth}{ X  X}
+ % \TextField[name=signature_of_person_making_statement, height=1em, width=\linewidth]{} &   \TextField[name=name_of_person_making_statement, height=1em, width=\linewidth]{} \\
+  %(Signature of person making statement) & (Print name)
+  & \NotUnderlinedTextField[name=person_making_statement_name, width=\linewidth]{} \\
+  \tline{(Signature of person making statement)}{\linewidth} & \tline{(Print name)}{\linewidth} \\
+
+      \NotUnderlinedTextField[name=person_making_statement_date, width=\linewidth]{}  & \\
+
+    \tline{(Date)}{\linewidth} & \\
+
+
+    % Print Name: \TextField[name=person_making_statement_name, height=1em]{} &  \TextField[name=person_making_statement_date, height=1em]{}  \\\\
+     % \multicolumn{2}{l}{ Signature \TextField[name=person_making_statement_signature, height=1em]{ }}\\\\
+
+\end{tabularx}
+\end{adjustwidth}
+\end{flushleft}
+
+
+
+
+
+
+ \bigskip
+
+\vspace{3em}
+
+
+\begin{flushleft}
+
+\textbf{State of Illinois}\par
+\textbf{County of Cook}\par
+
+\bigskip
+
+Signed and affirmed to before me on  \tline{(Date)}{2in} by \tline{(Name of Affiant)}{3in} \par
+
+\vspace{10em}
+
+
+\bigskip
+
+\begin{adjustwidth}{-2.25mm}{0cm}
+
+\begin{tabularx}{\linewidth}{ X X  }
+	  \tline{(Seal)}{\linewidth} &   \tline{(Signature of Notary Public)}{\linewidth} \\
+
+\end{tabularx}
+\end{adjustwidth}
+\end{flushleft}
+
+
+\par
+\bigskip
+
+\vspace{5em}
+
+\hrule
+\bigskip
+
+
+\begin{flushleft}
+\begin{adjustwidth}{-2.25mm}{0cm}
+\begin{tabularx}{\linewidth}{Z  r}
+
+
+    Attachment No.: & \TextField[name=attachment_no, height=1em]{} \\\\
+     Log No.: & \TextField[name=log_no, height=1em]{}  \\\\
+
+\end{tabularx}
+\end{adjustwidth}
+\end{flushleft}
+
+
+  \end{document}
