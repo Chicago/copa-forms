@@ -2,7 +2,7 @@ before_install:
 - sudo apt-get update && sudo apt-get install --no-install-recommends texlive-fonts-recommended
   texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng
 script:
-- mkdir -p pdfs
+- mkdir -p pdf
 - find ./tex -type f -name "*.tex" -exec pdflatex -output-directory ./pdf  {} \;
 - rm *.aux
 - rm *.log
