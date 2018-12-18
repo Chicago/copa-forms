@@ -4,7 +4,19 @@ permalink: /
 
 layout: home
 
-# COPA Forms
+hero:
+  image: /assets/uswds/img/hero.png
+  callout:
+    alt: "COPA Forms"
+    text: Draft Version of COPA's forms
+  button:
+    href: https://www.chicagocopa.org/
+    text: More About COPA
+  content: You can view the source code to this project on [Github](https://github.com/Chicago/copa-forms)
+---
+
+<br>
+ 
 
 ## Investigations
 
