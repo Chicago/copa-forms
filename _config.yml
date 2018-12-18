@@ -1,3 +1,5 @@
 title: COPA Forms
 description: Contains pdf versions of forms that COPA uses for its operations
 remote_theme: Chicago/design-cds-jekyll
+plugins:
+  - jekyll-remote-theme
